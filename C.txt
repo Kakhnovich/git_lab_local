@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 C.txt another text
+=======
+C.txt file text
+>>>>>>> master
+C.txt file text
