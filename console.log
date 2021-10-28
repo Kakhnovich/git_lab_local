@@ -1,0 +1,1314 @@
+----------------------------------------------------------------1----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt
+$ mkdir git_lab_local
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt
+$ cd git_lab_local/
+
+----------------------------------------------------------------2----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local
+$ git init
+Initialized empty Git repository in D:/JavaITechArt/git_lab_local/.git/
+
+----------------------------------------------------------------3----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ cd .git
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local/.git (GIT_DIR!)
+$ ls -als
+total 11
+4 drwxr-xr-x 1 Asus 197121   0 Oct 28 13:39 ./
+0 drwxr-xr-x 1 Asus 197121   0 Oct 28 13:39 ../
+1 -rw-r--r-- 1 Asus 197121  23 Oct 28 13:39 HEAD
+1 -rw-r--r-- 1 Asus 197121 130 Oct 28 13:39 config
+1 -rw-r--r-- 1 Asus 197121  73 Oct 28 13:39 description
+4 drwxr-xr-x 1 Asus 197121   0 Oct 28 13:39 hooks/
+0 drwxr-xr-x 1 Asus 197121   0 Oct 28 13:39 info/
+0 drwxr-xr-x 1 Asus 197121   0 Oct 28 13:39 objects/
+0 drwxr-xr-x 1 Asus 197121   0 Oct 28 13:39 refs/
+
+----------------------------------------------------------------4----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local/.git (GIT_DIR!)
+$ cd ../
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ touch A.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        A.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+----------------------------------------------------------------5----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git add --all
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   A.txt
+
+----------------------------------------------------------------6----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ echo "Some text" >> A.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   A.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   A.txt
+
+----------------------------------------------------------------7----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ touch B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git add B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   A.txt
+        new file:   B.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   A.txt
+
+----------------------------------------------------------------8----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git commit -m "First commit"
+[master (root-commit) 94b6a12] First commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 A.txt
+ create mode 100644 B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git config user.name "Elmax19"
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git config user.email maksim.kohnovich@mail.ru
+
+----------------------------------------------------------------9----------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git log
+commit 94b6a12946791852b9c29208760b8f0087d557d9 (HEAD -> master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 13:54:36 2021 +0300
+
+    First commit
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git log -c
+commit 94b6a12946791852b9c29208760b8f0087d557d9 (HEAD -> master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 13:54:36 2021 +0300
+
+    First commit
+
+diff --git a/A.txt b/A.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/B.txt b/B.txt
+new file mode 100644
+index 0000000..e69de29
+
+----------------------------------------------------------------10---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ echo "Some another text" >> B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git add --all
+warning: LF will be replaced by CRLF in A.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in B.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git commit -m "Second commit"
+[master 7c8fad2] Second commit
+ 2 files changed, 2 insertions(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git log -c
+commit 7c8fad236b5107f2ec0e4cbaf9c5870cc6da5e71 (HEAD -> master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 14:06:12 2021 +0300
+
+    Second commit
+
+diff --git a/A.txt b/A.txt
+index e69de29..01b51e6 100644
+--- a/A.txt
++++ b/A.txt
+@@ -0,0 +1 @@
++Some text
+diff --git a/B.txt b/B.txt
+index e69de29..135ef5e 100644
+--- a/B.txt
++++ b/B.txt
+@@ -0,0 +1 @@
++Some another text
+
+commit 94b6a12946791852b9c29208760b8f0087d557d9
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 13:54:36 2021 +0300
+
+    First commit
+
+diff --git a/A.txt b/A.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/B.txt b/B.txt
+new file mode 100644
+index 0000000..e69de29
+
+----------------------------------------------------------------11---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git rm A.txt
+rm 'A.txt'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    A.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git commit -m "Third commit"
+[master 7f2c4e7] Third commit
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 A.txt
+
+----------------------------------------------------------------12---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git branch test1
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git branch
+* master
+  test1
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout test1
+Switched to branch 'test1'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test1)
+$ git branch
+  master
+* test1
+
+----------------------------------------------------------------13---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test1)
+$ git checkout master
+Switched to branch 'master'
+
+----------------------------------------------------------------14---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout -b test2
+Switched to a new branch 'test2'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test2)
+$ git branch
+  master
+  test1
+* test2
+
+(Difference - creating and checkout new branch made in 1 command)
+----------------------------------------------------------------15---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test2)
+$ git checkout master
+Switched to branch 'master'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git branch -d test1 test2
+Deleted branch test1 (was 7f2c4e7).
+Deleted branch test2 (was 7f2c4e7).
+
+----------------------------------------------------------------16---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout -b test
+Switched to a new branch 'test'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ touch C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ touch D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Test commit 1"
+[test 052223d] Test commit 1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Test commit 2"
+[test 31bf16f] Test commit 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 D.txt
+
+----------------------------------------------------------------17---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git checkout master
+Switched to branch 'master'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ touch E.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ touch F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git add --all
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git commit -m "Master commit"
+[master 530c945] Master commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 E.txt
+ create mode 100644 F.txt
+
+----------------------------------------------------------------18---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git merge test
+Merge made by the 'recursive' strategy.
+ C.txt | 0
+ D.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 C.txt
+ create mode 100644 D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git log
+commit ab35cdc874e6bcf5cfbd3f58fa68ae73b6f17d61 (HEAD -> master)
+Merge: 3ba1d9d 31bf16f
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:05:36 2021 +0300
+
+    Merge branch 'test'
+
+commit 3ba1d9d940339dec363b911baf7fa15675121873
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:03:37 2021 +0300
+
+    Master commit
+
+commit 31bf16fad14f5da8bd4408326901fa3b1ead2e0c (test)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:02:24 2021 +0300
+
+    Test commit 2
+
+commit 052223dc2754469038b25885c33c9d229b395caa
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:01:17 2021 +0300
+
+    Test commit 1
+
+commit 7f2c4e7fcfcff28c60825f275cc839097c5c95a3
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 14:08:26 2021 +0300
+
+    Third commit
+
+----------------------------------------------------------------19---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout -b test-ff
+Switched to a new branch 'test-ff'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-ff)
+$ echo "C.txt file text" >> C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-ff)
+$ touch G.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-ff)
+$ git add --all
+warning: LF will be replaced by CRLF in C.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-ff)
+$ git commit -m "Test-ff commit"
+[test-ff 950e5fc] Test-ff commit
+ 2 files changed, 1 insertion(+)
+ create mode 100644 G.txt
+
+----------------------------------------------------------------20---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-ff)
+$ git checkout master
+Switched to branch 'master'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git merge test-ff
+Updating ab35cdc..950e5fc
+Fast-forward
+ C.txt | 1 +
+ G.txt | 0
+ 2 files changed, 1 insertion(+)
+ create mode 100644 G.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git branch -d test-ff
+Deleted branch test-ff (was 950e5fc).
+
+----------------------------------------------------------------21---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout test
+Switched to branch 'test'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "C.txt another text" >> C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add --all
+warning: LF will be replaced by CRLF in C.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -a -m "Test commit C.txt"
+[test 9c46fe4] Test commit C.txt
+ 1 file changed, 1 insertion(+)
+
+
+----------------------------------------------------------------22---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git merge master
+Auto-merging C.txt
+CONFLICT (content): Merge conflict in C.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test|MERGING)
+$ echo "C.txt file text" >> C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test|MERGING)
+$ git add C.txt
+warning: LF will be replaced by CRLF in C.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test|MERGING)
+$ git commit -m "Resolving merge conflict"
+[test bacf189] Resolving merge conflict
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git merge master
+Already up to date.
+
+----------------------------------------------------------------23---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git checkout master
+Switched to branch 'master'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout -b test-oct-1
+Switched to a new branch 'test-oct-1'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-1)
+$ echo "Some text" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-1)
+$ git add F.txt
+warning: LF will be replaced by CRLF in F.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-1)
+$ git commit -m "Test-oct-1 commit"
+[test-oct-1 bef04d3] Test-oct-1 commit
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-1)
+$ git checkout master
+Switched to branch 'master'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout -b test-oct-2
+Switched to a new branch 'test-oct-2'
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-2)
+$ echo "Some text2" >> G.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-2)
+$ git add G.txt
+warning: LF will be replaced by CRLF in G.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-2)
+$ git commit -m "Test-oct-2 commit"
+[test-oct-2 f679acb] Test-oct-2 commit
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-oct-2)
+$ git checkout test
+Switched to branch 'test'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git merge test-oct-1 test-oct-2
+Trying simple merge with test-oct-1
+Trying simple merge with test-oct-2
+Merge made by the 'octopus' strategy.
+ F.txt | 1 +
+ G.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+----------------------------------------------------------------24---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "B.txt new text" >> B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add B.txt
+warning: LF will be replaced by CRLF in B.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Editing B.txt"
+[test ea2c9f0] Editing B.txt
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git checkout master
+Switched to branch 'master'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ echo "B.txt another new text" >> B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git add B.txt
+warning: LF will be replaced by CRLF in B.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git commit -m "Master editing B.txt"
+[master dc9bedf] Master editing B.txt
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout test
+Switched to branch 'test'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git merge -s ours master
+Merge made by the 'ours' strategy.
+
+----------------------------------------------------------------25---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git branch test-rebase
+
+----------------------------------------------------------------26---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "D.txt some text" >> D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add D.txt
+warning: LF will be replaced by CRLF in D.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Test commit: editing D.txt"
+[test e748136] Test commit: editing D.txt
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git checkout test-rebase
+Switched to branch 'test-rebase'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ echo "edditing E.txt" >> E.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git add E.txt
+warning: LF will be replaced by CRLF in E.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git commit -m "Test-rebase commit: editing E.txt"
+[test-rebase 2f16881] Test-rebase commit: editing E.txt
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git log --all --graph
+* commit 2f16881744f64d4f0c57bdc27d11abda5d8c31e3 (HEAD -> test-rebase)
+| Author: Elmax19 <maksim.kohnovich@mail.ru>
+| Date:   Thu Oct 28 16:09:15 2021 +0300
+|
+|     Test-rebase commit: editing E.txt
+|
+| * commit e7481368fc4743b113d90b570d484b9de6c1ab4a (test)
+|/  Author: Elmax19 <maksim.kohnovich@mail.ru>
+|   Date:   Thu Oct 28 16:06:41 2021 +0300
+|
+|       Test commit: editing D.txt
+|
+*   commit 0ec01b8d495ecc88e0867363300acd85e652243d
+|\  Merge: ea2c9f0 dc9bedf
+| | Author: Elmax19 <maksim.kohnovich@mail.ru>
+| | Date:   Thu Oct 28 15:54:10 2021 +0300
+| |
+| |     Merge branch 'master' into test
+| |
+| * commit dc9bedf446c93ba926d7df87dd3dbd5039a828bb (master)
+| | Author: Elmax19 <maksim.kohnovich@mail.ru>
+| | Date:   Thu Oct 28 15:53:09 2021 +0300
+| |
+| |     Master editing B.txt
+| |
+* | commit ea2c9f007325fcd7996c8fc9f5f9bbd584eb2739
+| | Author: Elmax19 <maksim.kohnovich@mail.ru>
+| | Date:   Thu Oct 28 15:45:00 2021 +0300
+| |
+| |     Editing B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git rebase test
+Successfully rebased and updated refs/heads/test-rebase.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git log --all --graph
+* commit 55ebc58adc31c08cd1d68e845abe71c253cd655c (HEAD -> test-rebase)
+| Author: Elmax19 <maksim.kohnovich@mail.ru>
+| Date:   Thu Oct 28 16:09:15 2021 +0300
+|
+|     Test-rebase commit: editing E.txt
+|
+* commit e7481368fc4743b113d90b570d484b9de6c1ab4a (test)
+| Author: Elmax19 <maksim.kohnovich@mail.ru>
+| Date:   Thu Oct 28 16:06:41 2021 +0300
+|
+|     Test commit: editing D.txt
+|
+*   commit 0ec01b8d495ecc88e0867363300acd85e652243d
+|\  Merge: ea2c9f0 dc9bedf
+| | Author: Elmax19 <maksim.kohnovich@mail.ru>
+| | Date:   Thu Oct 28 15:54:10 2021 +0300
+| |
+| |     Merge branch 'master' into test
+| |
+| * commit dc9bedf446c93ba926d7df87dd3dbd5039a828bb (master)
+| | Author: Elmax19 <maksim.kohnovich@mail.ru>
+| | Date:   Thu Oct 28 15:53:09 2021 +0300
+| |
+| |     Master editing B.txt
+| |
+* | commit ea2c9f007325fcd7996c8fc9f5f9bbd584eb2739
+| | Author: Elmax19 <maksim.kohnovich@mail.ru>
+| | Date:   Thu Oct 28 15:45:00 2021 +0300
+| |
+| |     Editing B.txt
+
+----------------------------------------------------------------27---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git tag test-ltag
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git tag -m "Test message" test-atag
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git tag -v test-ltag
+error: test-ltag: cannot verify a non-tag object of type commit.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git tag -v test-atag
+object 55ebc58adc31c08cd1d68e845abe71c253cd655c
+type commit
+tag test-atag
+tagger Elmax19 <maksim.kohnovich@mail.ru> 1635426818 +0300
+
+Test message
+error: no signature found
+
+----------------------------------------------------------------28---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-rebase)
+$ git checkout test
+Switched to branch 'test'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git branch -d test-rebase
+error: The branch 'test-rebase' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D test-rebase'.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git branch -D test-rebase
+Deleted branch test-rebase (was 55ebc58).
+
+----------------------------------------------------------------29---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "First change" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "Second change" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "Third change" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   F.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git checkout -- F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+nothing to commit, working tree clean
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ cat F.txt
+Some text
+
+----------------------------------------------------------------30---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "First change" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "Second change" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "Third change" >> F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add F.txt
+warning: LF will be replaced by CRLF in F.txt.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)ctory
+$ git reset HEAD F.txt
+Unstaged changes after reset:
+M       F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   F.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+----------------------------------------------------------------31---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add F.txt
+warning: LF will be replaced by CRLF in F.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Changing F.txt"
+[test b5273d5] Changing F.txt
+ 1 file changed, 3 insertions(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git reset --soft HEAD~1
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git log
+commit e7481368fc4743b113d90b570d484b9de6c1ab4a (HEAD -> test)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 16:06:41 2021 +0300
+
+    Test commit: editing D.txt
+
+commit 0ec01b8d495ecc88e0867363300acd85e652243d
+Merge: ea2c9f0 dc9bedf
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:54:10 2021 +0300
+
+    Merge branch 'master' into test
+
+commit dc9bedf446c93ba926d7df87dd3dbd5039a828bb (master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:53:09 2021 +0300
+
+    Master editing B.txt
+
+commit ea2c9f007325fcd7996c8fc9f5f9bbd584eb2739
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:45:00 2021 +0300
+
+    Editing B.txt
+
+commit 7732ad7f76c6ed395850537f0f522e474db04644
+Merge: bacf189 bef04d3 f679acb
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:42:05 2021 +0300
+
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   F.txt
+
+----------------------------------------------------------------32---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Changing F.txt"
+[test f0fa2a0] Changing F.txt
+ 1 file changed, 3 insertions(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git reset --mixed HEAD~1
+Unstaged changes after reset:
+M       F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git log
+commit e7481368fc4743b113d90b570d484b9de6c1ab4a (HEAD -> test)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 16:06:41 2021 +0300
+
+    Test commit: editing D.txt
+
+commit 0ec01b8d495ecc88e0867363300acd85e652243d
+Merge: ea2c9f0 dc9bedf
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:54:10 2021 +0300
+
+    Merge branch 'master' into test
+
+commit dc9bedf446c93ba926d7df87dd3dbd5039a828bb (master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:53:09 2021 +0300
+
+    Master editing B.txt
+
+commit ea2c9f007325fcd7996c8fc9f5f9bbd584eb2739
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:45:00 2021 +0300
+
+    Editing B.txt
+
+commit 7732ad7f76c6ed395850537f0f522e474db04644
+Merge: bacf189 bef04d3 f679acb
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:42:05 2021 +0300
+
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   F.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+----------------------------------------------------------------33---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add F.txt
+warning: LF will be replaced by CRLF in F.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "Changing F.txt"
+[test 4a1a258] Changing F.txt
+ 1 file changed, 3 insertions(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git reset --hard HEAD~1
+HEAD is now at e748136 Test commit: editing D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git log
+commit e7481368fc4743b113d90b570d484b9de6c1ab4a (HEAD -> test)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 16:06:41 2021 +0300
+
+    Test commit: editing D.txt
+
+commit 0ec01b8d495ecc88e0867363300acd85e652243d
+Merge: ea2c9f0 dc9bedf
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:54:10 2021 +0300
+
+    Merge branch 'master' into test
+
+commit dc9bedf446c93ba926d7df87dd3dbd5039a828bb (master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:53:09 2021 +0300
+
+    Master editing B.txt
+
+commit ea2c9f007325fcd7996c8fc9f5f9bbd584eb2739
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:45:00 2021 +0300
+
+    Editing B.txt
+
+commit 7732ad7f76c6ed395850537f0f522e474db04644
+Merge: bacf189 bef04d3 f679acb
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:42:05 2021 +0300
+
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+nothing to commit, working tree clean
+
+----------------------------------------------------------------34---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git reflog
+e748136 (HEAD -> test) HEAD@{0}: reset: moving to HEAD~1
+4a1a258 HEAD@{1}: commit: Changing F.txt
+e748136 (HEAD -> test) HEAD@{2}: reset: moving to HEAD~1
+f0fa2a0 HEAD@{3}: commit: Changing F.txt
+e748136 (HEAD -> test) HEAD@{4}: reset: moving to HEAD~1
+b5273d5 HEAD@{5}: commit: Changing F.txt
+e748136 (HEAD -> test) HEAD@{6}: reset: moving to HEAD~1
+abf37f4 HEAD@{7}: commit: Changing F.txt
+e748136 (HEAD -> test) HEAD@{8}: checkout: moving from test-rebase to test
+55ebc58 (tag: test-ltag, tag: test-atag) HEAD@{9}: rebase (finish): returning to refs/heads/test-rebase
+55ebc58 (tag: test-ltag, tag: test-atag) HEAD@{10}: rebase (pick): Test-rebase commit: editing E.txt
+e748136 (HEAD -> test) HEAD@{11}: rebase (start): checkout test
+2f16881 HEAD@{12}: commit: Test-rebase commit: editing E.txt
+0ec01b8 HEAD@{13}: checkout: moving from test to test-rebase
+e748136 (HEAD -> test) HEAD@{14}: commit: Test commit: editing D.txt
+0ec01b8 HEAD@{15}: merge master: Merge made by the 'ours' strategy.
+ea2c9f0 HEAD@{16}: checkout: moving from master to test
+dc9bedf (master) HEAD@{17}: commit: Master editing B.txt
+950e5fc HEAD@{18}: checkout: moving from test to master
+ea2c9f0 HEAD@{19}: commit: Editing B.txt
+7732ad7 HEAD@{20}: merge test-oct-1 test-oct-2: Merge made by the 'octopus' strategy.
+bacf189 HEAD@{21}: checkout: moving from test-oct-2 to test
+f679acb (test-oct-2) HEAD@{22}: commit: Test-oct-2 commit
+950e5fc HEAD@{23}: checkout: moving from master to test-oct-2
+950e5fc HEAD@{24}: checkout: moving from test-oct-1 to master
+bef04d3 (test-oct-1) HEAD@{25}: commit: Test-oct-1 commit
+950e5fc HEAD@{26}: checkout: moving from master to test-oct-1
+950e5fc HEAD@{27}: checkout: moving from test to master
+bacf189 HEAD@{28}: commit (merge): Resolving merge conflict
+9c46fe4 HEAD@{29}: commit: Test commit C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git reset HEAD@{1}
+Unstaged changes after reset:
+M       F.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   F.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+----------------------------------------------------------------35---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git reset --hard HEAD~1
+HEAD is now at e748136 Test commit: editing D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git revert test-atag
+On branch test
+nothing to commit, working tree clean
+
+----------------------------------------------------------------36---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git blame C.txt
+bacf189a (Elmax19 2021-10-28 15:31:49 +0300 1) <<<<<<< HEAD
+9c46fe4c (Elmax19 2021-10-28 15:23:47 +0300 2) C.txt another text
+bacf189a (Elmax19 2021-10-28 15:31:49 +0300 3) =======
+bacf189a (Elmax19 2021-10-28 15:31:49 +0300 4) C.txt file text
+bacf189a (Elmax19 2021-10-28 15:31:49 +0300 5) >>>>>>> master
+950e5fcf (Elmax19 2021-10-28 15:13:42 +0300 6) C.txt file text
+
+----------------------------------------------------------------37---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ touch Z.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Z.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git clean -f
+Removing Z.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git status
+On branch test
+nothing to commit, working tree clean
+
+----------------------------------------------------------------38---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git show HEAD~1
+commit 0ec01b8d495ecc88e0867363300acd85e652243d
+Merge: ea2c9f0 dc9bedf
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:54:10 2021 +0300
+
+    Merge branch 'master' into test
+
+----------------------------------------------------------------39---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git remote add origin https://github.com/Elmax19/git_lab_local.git
+
+----------------------------------------------------------------40---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git remote
+origin
+
+----------------------------------------------------------------41---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git push -u origin test
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (43/43), 3.63 KiB | 148.00 KiB/s, done.
+Total 43 (delta 16), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (16/16), done.
+To https://github.com/Elmax19/git_lab_local.git
+ * [new branch]      test -> test
+Branch 'test' set up to track remote branch 'test' from 'origin'.
+
+----------------------------------------------------------------42---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone
+$ git clone http://github.com/Elmax19/git_lab_local.git
+Cloning into 'git_lab_local'...
+warning: redirecting to https://github.com/Elmax19/git_lab_local.git/
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (43/43), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 43 (delta 16), reused 43 (delta 16), pack-reused 0
+Receiving objects: 100% (43/43), done.
+Resolving deltas: 100% (16/16), done.
+
+----------------------------------------------------------------43---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone
+$ cd git_lab_local/
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git branch -a
+* test
+  remotes/origin/HEAD -> origin/test
+  remotes/origin/test
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (master)
+$ echo "B.txt changes" >> B.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (master)
+$ git add B.txt
+warning: LF will be replaced by CRLF in B.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (master)
+$ git commit -m "Changing B.txt"
+[master 03c5d72] Changing B.txt
+ 1 file changed, 1 insertion(+)
+
+----------------------------------------------------------------44---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git branch -a
+  master
+* test
+  test-oct-1
+  test-oct-2
+  remotes/origin/master
+  remotes/origin/test
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git push -u origin test
+Everything up-to-date
+Branch 'test' set up to track remote branch 'test' from 'origin'.
+
+----------------------------------------------------------------45---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git fetch
+warning: redirecting to https://github.com/Elmax19/git_lab_local.git/
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git checkout test
+Already on 'test'
+Your branch is ahead of 'origin/test' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ echo "C.txt changes" >> C.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git add C.txt
+warning: LF will be replaced by CRLF in C.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git commit -m "Changing C.txt"
+[test 70d0d2c] Changing C.txt
+ 1 file changed, 1 insertion(+)
+
+----------------------------------------------------------------46---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git branch
+  master
+* test
+  test-oct-1
+  test-oct-2
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ echo "D.txt first edit" >> D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git add D.txt
+warning: LF will be replaced by CRLF in D.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git commit -m "D.txt edit in test branch"
+[test fb2b3d9] D.txt edit in test branch
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ echo "D.txt second edit" >> D.txt
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git add D.txt
+warning: LF will be replaced by CRLF in D.txt.
+The file will have its original line endings in your working directory
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git commit -m "D.txt edit in master branch"
+[master fad6bbe] D.txt edit in maste
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git push -u origin master test
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 567 bytes | 113.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Elmax19/git_lab_local.git
+   e748136..fb2b3d9  test -> test
+ * [new branch]      master -> master
+Branch 'test' set up to track remote branch 'test' from 'origin'.
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+----------------------------------------------------------------47---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git pull
+warning: redirecting to https://github.com/Elmax19/git_lab_local.git/
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 2), reused 6 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), 547 bytes | 0 bytes/s, done.
+From http://github.com/Elmax19/git_lab_local
+   e748136..fb2b3d9  test       -> origin/test
+ * [new branch]      master     -> origin/master
+Merge made by the 'recursive' strategy.
+ D.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git log
+commit 424145809a3466cea8350c484d167e115c8e4173 (HEAD -> test)
+Merge: 70d0d2c fb2b3d9
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 17:20:45 2021 +0300
+
+    Merge branch 'test' of http://github.com/Elmax19/git_lab_local into test
+
+commit fb2b3d931e8b61c6aebd4a893cd4dbababab159c (origin/test, origin/HEAD)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 17:17:00 2021 +0300
+
+    D.txt edit in test branch
+
+commit 70d0d2ccd4f95c1fd4f2bd5aaa6d1a84776385a6
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 17:13:16 2021 +0300
+
+    Changing C.txt
+
+commit ccc03fe0c8bfa1702d08fd894072c4045219535f
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 17:08:34 2021 +0300
+
+----------------------------------------------------------------48---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test)
+$ git checkout master
+Switched to a new branch 'master'
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (master)
+$ git pull --rebase
+warning: redirecting to https://github.com/Elmax19/git_lab_local.git/
+Already up to date.
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (master)
+$ git log
+commit fad6bbe8a2cd08c436ce6e5a78da1fe266b94118 (HEAD -> master, origin/master)
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 17:17:52 2021 +0300
+
+    D.txt edit in master branch
+
+commit dc9bedf446c93ba926d7df87dd3dbd5039a828bb
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:53:09 2021 +0300
+
+    Master editing B.txt
+
+commit 950e5fcf362c5ab454666b850b1b10d7c499ecd4
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:13:42 2021 +0300
+
+    Test-ff commit
+
+commit ab35cdc874e6bcf5cfbd3f58fa68ae73b6f17d61
+Merge: 3ba1d9d 31bf16f
+Author: Elmax19 <maksim.kohnovich@mail.ru>
+Date:   Thu Oct 28 15:05:36 2021 +0300
+
+----------------------------------------------------------------49---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (master)
+$ git checkout -b test-rm
+Switched to a new branch 'test-rm'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test-rm)
+$ git push -u origin test-rm
+warning: redirecting to https://github.com/Elmax19/git_lab_local.git/
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'test-rm' on GitHub by visiting:
+remote:      https://github.com/Elmax19/git_lab_local/pull/new/test-rm
+remote:
+To http://github.com/Elmax19/git_lab_local.git
+ * [new branch]      test-rm -> test-rm
+Branch 'test-rm' set up to track remote branch 'test-rm' from 'origin'.
+
+----------------------------------------------------------------50---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git fetch
+From https://github.com/Elmax19/git_lab_local
+ * [new branch]      test-rm    -> origin/test-rm
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (master)
+$ git checkout -b test-new-rm --track origin/test-rm
+Switched to a new branch 'test-new-rm'
+Branch 'test-new-rm' set up to track remote branch 'test-rm' from 'origin'.
+
+----------------------------------------------------------------51---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test-rm)
+$ git branch -d test-rm
+error: Cannot delete branch 'test-rm' checked out at 'D:/JavaITechArt/clone/git_lab_local'
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/clone/git_lab_local (test-rm)
+$ git push -u origin -d test-rm
+warning: redirecting to https://github.com/Elmax19/git_lab_local.git/
+To http://github.com/Elmax19/git_lab_local.git
+ - [deleted]         test-rm
+
+----------------------------------------------------------------52---------------------------------------------------------------
+
+Asus@DESKTOP-1FAAGCT MINGW64 /d/JavaITechArt/git_lab_local (test-new-rm)
+$ git pull -p
+From https://github.com/Elmax19/git_lab_local
+ - [deleted]         (none)     -> origin/test-rm
+Your configuration specifies to merge with the ref 'refs/heads/test-rm'
+from the remote, but no such ref was fetched.
+
+----------------------------------------------------------------------------------------------------------------------------------
