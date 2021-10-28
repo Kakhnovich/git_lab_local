@@ -1,1 +1,2 @@
 Some another text
+B.txt another new text
